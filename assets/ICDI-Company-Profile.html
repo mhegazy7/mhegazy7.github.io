@@ -182,16 +182,15 @@
   .cert-card h4{color:#fff; font-size:19px; margin:10px 0 6px;}
   .cert-card p{font-size:13px; color:#b7c3cd; text-transform:none; letter-spacing:normal;}
 
-  .qms-flow{display:grid; grid-template-columns:repeat(5,1fr); gap:1px; background:var(--line); border:1px solid var(--line);}
+  .qms-flow{display:grid; grid-template-columns:repeat(5,1fr); gap:10px;}
   .qms-node{
-    background:var(--card); padding:22px 20px; min-height:132px;
-    display:flex; flex-direction:column; justify-content:space-between; align-items:flex-start;
+    background:var(--card); border:1px solid var(--line); padding:16px 14px; font-size:13px; color:var(--ink);
+    text-align:center; position:relative; min-height:70px; display:flex; align-items:center; justify-content:center;
   }
-  .qms-node .qnum{font-family:'IBM Plex Mono',monospace; font-size:12px; font-weight:600; color:var(--steel); letter-spacing:0.08em;}
-  .qms-node .qlabel{
-    font-family:'Oswald',sans-serif; font-size:15.5px; line-height:1.25; color:var(--ink);
-    text-transform:uppercase; letter-spacing:0.01em; margin-top:18px;
+  .qms-node::after{
+    content:'→'; position:absolute; right:-16px; top:50%; transform:translateY(-50%); color:var(--line); font-size:16px;
   }
+  .qms-node:nth-child(5n)::after{content:none;}
 
   /* TEAM */
   .team-grid{display:grid; grid-template-columns:repeat(3,1fr); gap:16px;}
@@ -219,8 +218,8 @@
     .step{border-right:1px dashed var(--line); padding-right:22px;}
     .cust-grid{grid-template-columns:repeat(2,1fr);}
     .quality-grid{grid-template-columns:repeat(2,1fr);}
-    .qms-flow{grid-template-columns:repeat(2,1fr);}
-    .qms-node{min-height:110px;}
+    .qms-flow{grid-template-columns:repeat(1,1fr);}
+    .qms-node::after{content:none;}
     .team-grid{grid-template-columns:1fr;}
     .foot-grid{grid-template-columns:1fr; gap:28px;}
     nav.links{display:none;}
@@ -316,7 +315,7 @@
         </div>
         <div class="card signal">
           <div class="k">Mission</div>
-          <p>To manufacture metal, plastic and rubber components that meet automotive quality standards at competitive cost, delivered to line sequence, and to remain the supplier our customers can build a programme around. Every process stays under one roof so accountability for tooling, quality and delivery is never divided. We remain open to new investments, partnerships and joint ventures wherever they make industrial sense.</p>
+          <p>To manufacture metal, plastic and rubber components that meet automotive quality standards at competitive cost, delivered to line sequence, and to remain the supplier our customers can build a programme around. Every process stays under one roof so accountability for tooling, quality and delivery is never divided.</p>
         </div>
         <div class="card">
           <div class="k">Leadership</div>
@@ -403,16 +402,16 @@
       <p>The system governing a part's path from customer requirement to warehoused, finished good.</p>
     </div>
     <div class="qms-flow reveal">
-      <div class="qms-node"><div class="qnum">01</div><div class="qlabel">Customer Requirements</div></div>
-      <div class="qms-node"><div class="qnum">02</div><div class="qlabel">Planning &amp; Documentation</div></div>
-      <div class="qms-node"><div class="qnum">03</div><div class="qlabel">Purchasing &amp; Resources</div></div>
-      <div class="qms-node"><div class="qnum">04</div><div class="qlabel">Production &amp; Process</div></div>
-      <div class="qms-node"><div class="qnum">05</div><div class="qlabel">Inspection &amp; Testing</div></div>
-      <div class="qms-node"><div class="qnum">06</div><div class="qlabel">Calibration &amp; Maintenance</div></div>
-      <div class="qms-node"><div class="qnum">07</div><div class="qlabel">Nonconformance Control</div></div>
-      <div class="qms-node"><div class="qnum">08</div><div class="qlabel">Internal Audit &amp; CAPA</div></div>
-      <div class="qms-node"><div class="qnum">09</div><div class="qlabel">Customer Satisfaction</div></div>
-      <div class="qms-node"><div class="qnum">10</div><div class="qlabel">Warehousing &amp; Delivery</div></div>
+      <div class="qms-node">Customer Requirements</div>
+      <div class="qms-node">Planning &amp; Documentation</div>
+      <div class="qms-node">Purchasing &amp; Resources</div>
+      <div class="qms-node">Production &amp; Process</div>
+      <div class="qms-node">Inspection &amp; Testing</div>
+      <div class="qms-node">Calibration &amp; Maintenance</div>
+      <div class="qms-node">Nonconformance Control</div>
+      <div class="qms-node">Internal Audit &amp; CAPA</div>
+      <div class="qms-node">Customer Satisfaction</div>
+      <div class="qms-node">Warehousing &amp; Delivery</div>
     </div>
   </section>
 

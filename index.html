@@ -8,19 +8,20 @@
 <body>
 <x-dc>
 <helmet>
-<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-<meta name="ext-resource-dependency" content="assets/v/trim/chevy-n-series.png">
-<meta name="ext-resource-dependency" content="assets/v/trim/chevy-t-series.png">
-<meta name="ext-resource-dependency" content="assets/v/trim/mcv-bus.png">
-<meta name="ext-resource-dependency" content="assets/v/trim/suzuki-pickup.png">
-<meta name="ext-resource-dependency" content="assets/v/trim/suzuki-van-v2.png">
-<meta name="ext-resource-dependency" content="assets/v/trim/foton-view-v2.png">
-<meta name="ext-resource-dependency" content="assets/v/trim/tiggo-4pro.png">
-<meta name="ext-resource-dependency" content="assets/v/trim/tiggo-8.png">
-<meta name="ext-resource-dependency" content="assets/v/trim/chery-arrizo-5.png">
-<meta name="ext-resource-dependency" content="assets/v/trim/geely-emgrand-v2.png">
-<meta name="ext-resource-dependency" content="assets/v/trim/hyundai-elantra.png">
-<meta name="ext-resource-dependency" content="assets/v/trim/hyundai-accent.png">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="theme-color" content="#0707f6">
+<meta name="ext-resource-dependency" content="assets/v/trim/chevy-n-series.webp">
+<meta name="ext-resource-dependency" content="assets/v/trim/chevy-t-series.webp">
+<meta name="ext-resource-dependency" content="assets/v/trim/mcv-bus.webp">
+<meta name="ext-resource-dependency" content="assets/v/trim/suzuki-pickup.webp">
+<meta name="ext-resource-dependency" content="assets/v/trim/suzuki-van-v2.webp">
+<meta name="ext-resource-dependency" content="assets/v/trim/foton-view-v2.webp">
+<meta name="ext-resource-dependency" content="assets/v/trim/tiggo-4pro.webp">
+<meta name="ext-resource-dependency" content="assets/v/trim/tiggo-8.webp">
+<meta name="ext-resource-dependency" content="assets/v/trim/chery-arrizo-5.webp">
+<meta name="ext-resource-dependency" content="assets/v/trim/geely-emgrand-v2.webp">
+<meta name="ext-resource-dependency" content="assets/v/trim/hyundai-elantra.webp">
+<meta name="ext-resource-dependency" content="assets/v/trim/hyundai-accent.webp">
 <meta name="ext-resource-dependency" content="assets/client-logo1.webp">
 <meta name="ext-resource-dependency" content="assets/client-bg53.webp">
 <meta name="ext-resource-dependency" content="assets/client-suzuki-trim.png">
@@ -30,16 +31,16 @@
 <meta name="ext-resource-dependency" content="assets/client-egat-trim.png">
 <meta name="ext-resource-dependency" content="assets/client-elsewedy-trim.png">
 <meta name="ext-resource-dependency" content="assets/client-kasrawy-trim.png">
-<meta name="ext-resource-dependency" content="assets/founder-v2.png">
+<meta name="ext-resource-dependency" content="assets/founder-v2.webp">
 <meta name="ext-resource-dependency" content="assets/icons/welding-torch-v2.svg">
 <meta name="ext-resource-dependency" content="assets/icons/injection-mould-v2.svg">
 <meta name="ext-resource-dependency" content="assets/icons/rubber-roll.svg">
 <meta name="ext-resource-dependency" content="assets/icons/laser-cut.svg">
-<meta name="ext-resource-dependency" content="assets/svc-metal-forming-new.png">
+<meta name="ext-resource-dependency" content="assets/svc-metal-forming-new.webp">
 <meta name="ext-resource-dependency" content="assets/svc-metal-forming.webp">
 <meta name="ext-resource-dependency" content="assets/svc-welding.webp">
-<meta name="ext-resource-dependency" content="assets/svc-plastic-moulding.png">
-<meta name="ext-resource-dependency" content="assets/svc-rubber.png">
+<meta name="ext-resource-dependency" content="assets/svc-plastic-moulding.webp">
+<meta name="ext-resource-dependency" content="assets/svc-rubber.webp">
 <meta name="ext-resource-dependency" content="assets/svc-painting.webp">
 <meta name="ext-resource-dependency" content="assets/cert-iso45001-1.webp">
 <meta name="ext-resource-dependency" content="assets/cert-iso9001.webp">
@@ -98,7 +99,11 @@
   "hasCredential": ["IATF 16949:2016", "ISO 9001:2015", "ISO 14001:2015", "ISO 45001:2018"]
 }
 </script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="preload" as="image" href="assets/logo-icdi.webp">
+<link rel="preload" as="image" href="assets/hero-cairo-sm.webp" media="(max-width: 900px)">
+<link rel="preload" as="image" href="assets/hero-cairo-lg.webp" media="(min-width: 901px)">
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap">
 <link rel="stylesheet" href="assets/fa/css/fontawesome.min.css">
 <link rel="stylesheet" href="assets/fa/css/solid.min.css">
@@ -133,8 +138,12 @@
   .icdi-belt-track { animation: icdi-belt 32s linear infinite; }
   .icdi-belt:hover .icdi-belt-track { animation-play-state: paused; }
   img, iframe { max-width: 100%; }
+  .r-team { box-sizing: border-box; }
   .r-belt-img { max-height: 58px; max-width: 132px; }
   .r-belt-sq { max-height: 88px; max-width: 132px; }
+  @media (max-width: 900px) {
+    .r-hero, .r-hero-sub { background-image: url('assets/hero-cairo-sm.webp') !important; }
+  }
   @media (max-width: 900px) {
     /* keep the desktop column structure — scale it down, don't stack it */
     .r-2col { grid-template-columns: repeat(2, minmax(0, 1fr)) !important; gap: 14px !important; }
@@ -196,10 +205,10 @@
     /* notch / status-bar safe areas — must come after the generic paddings above */
     .r-top { gap: 8px !important; flex-wrap: nowrap !important; align-items: center !important;
              justify-content: space-between !important;
-             padding: max(30px, calc(23px + env(safe-area-inset-top, 0px))) calc(12px + env(safe-area-inset-right, 0px)) 11px calc(12px + env(safe-area-inset-left, 0px)) !important; }
-    .r-header { padding-top: max(18px, calc(env(safe-area-inset-top, 0px) + 8px)) !important; }
+             padding: 9px 12px !important; }
+    .r-header { padding-top: 8px !important; }
     .r-head { gap: 10px !important;
-              padding: 8px calc(14px + env(safe-area-inset-right, 0px)) 8px calc(14px + env(safe-area-inset-left, 0px)) !important; }
+              padding: 8px 14px !important; }
     .r-toplist { order: 1 !important; flex: 0 1 auto !important; flex-direction: column !important;
                  align-items: flex-start !important; gap: 3px !important; font-size: 11px !important; }
     .r-toplist span { gap: 5px !important; white-space: nowrap !important; }
@@ -251,6 +260,15 @@
     .r-team > div:nth-child(3) { font-size: 11.5px !important; }
     .r-footlist { font-size: 10.5px !important; }
   }
+  @media (max-width: 900px) {
+    /* phone: founder + services-page rows stack — picture first, copy full-width underneath */
+    .r-2col.r-stack { grid-template-columns: minmax(0, 1fr) !important; gap: 14px !important; align-items: start !important; }
+    .r-2col.r-stack > .r-imgcell, .r-2col.r-stack > .r-slidecell { order: 0 !important; margin-top: 0 !important; align-self: stretch !important; }
+    .r-2col.r-stack > :not(.r-imgcell):not(.r-slidecell) { order: 1 !important; }
+    .r-2col.r-stack .r-h2 { font-size: 22px !important; line-height: 27px !important; }
+    .r-2col.r-stack p { font-size: 13px !important; line-height: 1.65 !important; }
+    .r-2col.r-stack .r-rule { margin-top: 8px !important; margin-bottom: 12px !important; }
+  }
 </style>
 </helmet>
 
@@ -278,7 +296,7 @@
   <!-- header -->
   <header class="r-header" style="background:#fff;position:sticky;top:0;z-index:30;box-shadow:0 1px 6px rgba(0,0,0,0.08)">
     <div class="r-head" style="max-width:1140px;margin:0 auto;padding:10px 20px;display:flex;align-items:center;gap:30px">
-      <img src="assets/logo-icdi.webp" alt="ICDI — International Company for Developed Industry logo" class="r-logo" style="height:72px;width:auto;display:block">
+      <img src="assets/logo-icdi.webp" alt="ICDI — International Company for Developed Industry logo" fetchpriority="high" decoding="async" class="r-logo" style="height:72px;width:auto;display:block">
       <nav class="icdi-nav r-navlist" style="margin-left:auto;display:flex;gap:30px;align-items:center;font-size:16px;font-weight:500">
         <a href="#" onClick="{{ goHome }}" style="position:relative;padding:8px 0;display:block">{{ t.navHome }}
           <sc-if value="{{ isHome }}" hint-placeholder-val="{{ true }}"><i style="position:absolute;left:0;right:0;bottom:0;height:3px;background:#f80506"></i></sc-if></a>
@@ -296,7 +314,7 @@
   <sc-if value="{{ isHome }}" hint-placeholder-val="{{ true }}">
   <main data-screen-label="Home">
 
-    <section class="r-hero" style="position:relative;min-height:600px;display:flex;align-items:center;background-image:url('assets/hero-cairo.png');background-position:center center;background-size:cover;background-repeat:no-repeat;background-attachment:fixed">
+    <section class="r-hero" style="position:relative;min-height:600px;display:flex;align-items:center;background-image:url('assets/hero-cairo-lg.webp');background-position:center center;background-size:cover;background-repeat:no-repeat;background-attachment:fixed">
       <div style="position:absolute;inset:0;background:#000;opacity:0.5"></div>
       <div class="r-inner" style="position:relative;max-width:1140px;margin:0 auto;padding:20px;width:100%;text-align:center">
         <h2 style="margin:0;font-size:18px;font-weight:600;text-transform:uppercase;letter-spacing:5px;color:#e85b5b">{{ t.welcome }}</h2>
@@ -390,7 +408,7 @@
           <sc-for list="{{ services }}" as="s" hint-placeholder-count="6">
             <div class="r-svcrow" style="display:flex;gap:16px;align-items:flex-start;padding:10px">
               <span class="r-svcicon" style="background:#0707f6;color:#fff;width:56px;height:56px;min-width:56px;display:flex;align-items:center;justify-content:center;font-size:30px">
-                <sc-if value="{{ s.iconSvg }}" hint-placeholder-val="{{ false }}"><img src="{{ s.iconSvg }}" alt="" style="width:32px;height:32px;display:block"></sc-if>
+                <sc-if value="{{ s.iconSvg }}" hint-placeholder-val="{{ false }}"><img src="{{ s.iconSvg }}" decoding="async" alt="" style="width:32px;height:32px;display:block"></sc-if>
                 <sc-if value="{{ s.iconFont }}" hint-placeholder-val="{{ true }}"><i class="{{ s.icon }}"></i></sc-if>
               </span>
               <div>
@@ -426,26 +444,26 @@
         <div class="r-4col" style="display:grid;grid-template-columns:repeat(4,1fr);gap:24px;align-items:start">
           <sc-for list="{{ certs }}" as="c" hint-placeholder-count="4">
             <div style="display:flex;flex-direction:column;gap:12px">
-              <img src="{{ c.img }}" alt="{{ c.name }} certificate held by ICDI" style="width:100%;display:block">
+              <img src="{{ c.img }}" loading="lazy" decoding="async" alt="{{ c.name }} certificate held by ICDI" style="width:100%;display:block">
               <div style="font-size:14px;font-weight:600;letter-spacing:0.02em;color:#4A4A4A;text-align:center">{{ c.name }}</div>
             </div>
           </sc-for>
         </div>
         <div class="r-2col" style="max-width:600px;margin:40px auto 0;display:grid;grid-template-columns:1fr 1fr;gap:30px;align-items:center">
-          <img src="assets/badge-iatf.webp" class="r-biqs" alt="General Motors BIQ (Built-In Quality) certified supplier badge" style="width:100%;display:block">
-          <img src="assets/badge-gm.png" alt="General Motors approved supplier badge" style="width:100%;display:block">
+          <img src="assets/badge-iatf.webp" loading="lazy" decoding="async" class="r-biqs" alt="General Motors BIQ (Built-In Quality) certified supplier badge" style="width:100%;display:block">
+          <img src="assets/badge-gm.png" loading="lazy" decoding="async" alt="General Motors approved supplier badge" style="width:100%;display:block">
         </div>
       </div>
     </section>
 
     <section style="padding:50px 0;background:#fff">
-      <div class="r-2col r-inner" style="max-width:1140px;margin:0 auto;padding:0 20px;display:grid;grid-template-columns:1fr 1fr;gap:40px;align-items:center">
+      <div class="r-2col r-inner r-stack" style="max-width:1140px;margin:0 auto;padding:0 20px;display:grid;grid-template-columns:1fr 1fr;gap:40px;align-items:center">
         <div class="r-slidecell" style="position:relative">
           <div style="width:100%;aspect-ratio:4 / 3;overflow:hidden;background:#fff;position:relative" onMouseEnter="{{ slidesPause }}" onMouseLeave="{{ slidesResume }}">
             <sc-for list="{{ founderLayers }}" as="L" hint-placeholder-count="2">
               <div style="position:absolute;inset:0;display:flex;align-items:center;justify-content:center;opacity:{{ L.op }};transition:opacity 1400ms cubic-bezier(0.4,0,0.2,1)">
                 <div style="height:100%;aspect-ratio:{{ L.ratio }};max-width:100%;overflow:hidden;background:#F1F1F1">
-                  <img src="{{ L.src }}" alt="Abdelmeguid Hegazy, founder and chairman of ICDI" draggable="false" style="width:100%;height:100%;object-fit:{{ L.fit }};display:block;pointer-events:none;user-select:none;object-position:{{ L.x }}% {{ L.y }}%;transform:scale({{ L.scale }});transform-origin:{{ L.x }}% {{ L.y }}%">
+                  <img src="{{ L.src }}" decoding="async" alt="Abdelmeguid Hegazy, founder and chairman of ICDI" draggable="false" style="width:100%;height:100%;object-fit:{{ L.fit }};display:block;pointer-events:none;user-select:none;object-position:{{ L.x }}% {{ L.y }}%;transform:scale({{ L.scale }});transform-origin:{{ L.x }}% {{ L.y }}%">
                 </div>
               </div>
             </sc-for>
@@ -473,7 +491,7 @@
           <div class="icdi-belt-track" style="display:flex;align-items:center;width:max-content">
             <sc-for list="{{ clientsLoop }}" as="c" hint-placeholder-count="14">
               <div class="r-belt-cell" style="margin-right:48px;flex:none;display:flex;align-items:center;justify-content:center;height:92px">
-                <img src="{{ c.img }}" alt="{{ c.name }} — ICDI client" class="{{ c.cls }}" style="max-width:100%;object-fit:contain;display:block">
+                <img src="{{ c.img }}" loading="lazy" decoding="async" alt="{{ c.name }} — ICDI client" class="{{ c.cls }}" style="max-width:100%;object-fit:contain;display:block">
               </div>
             </sc-for>
           </div>
@@ -493,7 +511,7 @@
       </div>
     </section>
 
-    <section style="position:relative;padding:50px 0;background-image:url('assets/contact-bg.jpeg');background-position:center center;background-size:cover">
+    <section style="position:relative;padding:50px 0;background-image:url('assets/contact-bg.webp');background-position:center center;background-size:cover">
       <div style="position:absolute;inset:0;background:#fff;opacity:0.95"></div>
       <div class="r-inner" style="position:relative;max-width:600px;margin:0 auto;padding:0 20px">
         <div style="text-align:center">
@@ -519,7 +537,7 @@
   <!-- ══ ABOUT ══ -->
   <sc-if value="{{ isAbout }}" hint-placeholder-val="{{ false }}">
   <main data-screen-label="About Us">
-    <section class="r-hero-sub" style="position:relative;min-height:300px;display:flex;align-items:center;background-image:url('assets/hero-cairo.png');background-position:center center;background-size:cover">
+    <section class="r-hero-sub" style="position:relative;min-height:300px;display:flex;align-items:center;background-image:url('assets/hero-cairo-lg.webp');background-position:center center;background-size:cover">
       <div style="position:absolute;inset:0;background:#000;opacity:0.5"></div>
       <div class="r-inner" style="position:relative;max-width:1140px;margin:0 auto;padding:20px;width:100%;text-align:center">
         <h1 class="r-h1" style="margin:0;font-size:60px;line-height:65px;font-weight:800;text-transform:uppercase;color:#fff">{{ t.aboutUs }}</h1>
@@ -562,13 +580,13 @@
     </section>
 
     <section style="background:#fff;padding:50px 0">
-      <div class="r-2col r-inner" style="max-width:1140px;margin:0 auto;padding:0 20px;display:grid;grid-template-columns:1fr 1fr;gap:40px;align-items:center">
+      <div class="r-2col r-inner r-stack" style="max-width:1140px;margin:0 auto;padding:0 20px;display:grid;grid-template-columns:1fr 1fr;gap:40px;align-items:center">
         <div class="r-slidecell" style="position:relative">
           <div style="width:100%;aspect-ratio:4 / 3;overflow:hidden;background:#fff;position:relative" onMouseEnter="{{ slidesPause }}" onMouseLeave="{{ slidesResume }}">
             <sc-for list="{{ founderLayers }}" as="L" hint-placeholder-count="2">
               <div style="position:absolute;inset:0;display:flex;align-items:center;justify-content:center;opacity:{{ L.op }};transition:opacity 1400ms cubic-bezier(0.4,0,0.2,1)">
                 <div style="height:100%;aspect-ratio:{{ L.ratio }};max-width:100%;overflow:hidden;background:#F1F1F1">
-                  <img src="{{ L.src }}" alt="Abdelmeguid Hegazy, founder and chairman of ICDI" draggable="false" style="width:100%;height:100%;object-fit:{{ L.fit }};display:block;pointer-events:none;user-select:none;object-position:{{ L.x }}% {{ L.y }}%;transform:scale({{ L.scale }});transform-origin:{{ L.x }}% {{ L.y }}%">
+                  <img src="{{ L.src }}" decoding="async" alt="Abdelmeguid Hegazy, founder and chairman of ICDI" draggable="false" style="width:100%;height:100%;object-fit:{{ L.fit }};display:block;pointer-events:none;user-select:none;object-position:{{ L.x }}% {{ L.y }}%;transform:scale({{ L.scale }});transform-origin:{{ L.x }}% {{ L.y }}%">
                 </div>
               </div>
             </sc-for>
@@ -593,7 +611,7 @@
           <sc-for list="{{ team }}" as="t" hint-placeholder-count="6">
             <div class="r-team" style="background:#fff;padding:16px 16px 20px;text-align:center;max-width:260px;margin:0 auto;width:100%">
               <div style="width:100%;aspect-ratio:3/4;margin:0 auto;overflow:hidden;background:#F1F1F1">
-                <img src="{{ t.img }}" alt="{{ t.name }}, {{ t.role }} at ICDI" draggable="false" style="width:100%;height:100%;object-fit:cover;display:block;pointer-events:none;user-select:none;object-position:{{ t.focusX }}% {{ t.focusY }}%;transform:scale({{ t.scale }});transform-origin:{{ t.focusX }}% {{ t.focusY }}%">
+                <img src="{{ t.img }}" loading="lazy" decoding="async" alt="{{ t.name }}, {{ t.role }} at ICDI" draggable="false" style="width:100%;height:100%;object-fit:cover;display:block;pointer-events:none;user-select:none;object-position:{{ t.focusX }}% {{ t.focusY }}%;transform:scale({{ t.scale }});transform-origin:{{ t.focusX }}% {{ t.focusY }}%">
               </div>
               <div style="width:40px;border-top:3px solid #f80506;margin:18px auto 0"></div>
               <div style="margin-top:14px;font-size:20px;font-weight:600;color:#000">{{ t.name }}</div>
@@ -624,7 +642,7 @@
   <!-- ══ SERVICES ══ -->
   <sc-if value="{{ isServices }}" hint-placeholder-val="{{ false }}">
   <main data-screen-label="Services">
-    <section class="r-hero-sub" style="position:relative;min-height:300px;display:flex;align-items:center;background-image:url('assets/hero-cairo.png');background-position:center center;background-size:cover">
+    <section class="r-hero-sub" style="position:relative;min-height:300px;display:flex;align-items:center;background-image:url('assets/hero-cairo-lg.webp');background-position:center center;background-size:cover">
       <div style="position:absolute;inset:0;background:#000;opacity:0.5"></div>
       <div class="r-inner" style="position:relative;max-width:1140px;margin:0 auto;padding:20px;width:100%;text-align:center">
         <h1 class="r-h1" style="margin:0;font-size:60px;line-height:65px;font-weight:800;text-transform:uppercase;color:#fff">{{ t.services }}</h1>
@@ -651,7 +669,7 @@
           <sc-for list="{{ ringItems }}" as="v" hint-placeholder-count="12">
             <div class="r-ring-item" style="position:absolute;left:50%;top:0;width:168px;margin-left:-84px;text-align:center;will-change:transform;transform:{{ v.tf }};opacity:{{ v.op }};z-index:{{ v.z }}">
               <div class="r-ring-img" style="height:80px;display:flex;align-items:flex-end;justify-content:center">
-                <img src="{{ v.img }}" alt="{{ v.name }} — vehicle programme supplied by ICDI" class="r-ring-img" style="height:80px;width:auto;max-width:168px;object-fit:contain;display:block">
+                <img src="{{ v.img }}" loading="lazy" decoding="async" alt="{{ v.name }} — vehicle programme supplied by ICDI" class="r-ring-img" style="height:80px;width:auto;max-width:168px;object-fit:contain;display:block">
               </div>
               <div style="margin-top:10px;font-size:14px;font-weight:500;color:#000;line-height:1.25;opacity:{{ v.labelOp }}">{{ v.name }}</div>
               <div style="font-size:12px;color:#7A7A7A;line-height:1.3;opacity:{{ v.labelOp }}">{{ v.note }}</div>
@@ -693,7 +711,7 @@
               <div class="r-rule" style="width:10%;border-top:5px solid #f80506;margin:14px 0 18px"></div>
               <p style="margin:0;font-size:16px;line-height:1.8;color:#7A7A7A">{{ s.long }}</p>
             </div>
-            <div class="r-imgcell" style="order:{{ s.imgOrder }}"><img src="{{ s.img }}" alt="{{ s.name }} at the ICDI plant" style="width:100%;aspect-ratio:3/2;object-fit:cover;display:block"></div>
+            <div class="r-imgcell" style="order:{{ s.imgOrder }}"><img src="{{ s.img }}" loading="lazy" decoding="async" alt="{{ s.name }} at the ICDI plant" style="width:100%;aspect-ratio:3/2;object-fit:cover;display:block"></div>
           </div>
         </sc-for>
       </div>
@@ -704,7 +722,7 @@
   <!-- ══ CONTACT ══ -->
   <sc-if value="{{ isContact }}" hint-placeholder-val="{{ false }}">
   <main data-screen-label="Contact Us">
-    <section class="r-hero-sub" style="position:relative;min-height:300px;display:flex;align-items:center;background-image:url('assets/hero-cairo.png');background-position:center center;background-size:cover">
+    <section class="r-hero-sub" style="position:relative;min-height:300px;display:flex;align-items:center;background-image:url('assets/hero-cairo-lg.webp');background-position:center center;background-size:cover">
       <div style="position:absolute;inset:0;background:#000;opacity:0.5"></div>
       <div class="r-inner" style="position:relative;max-width:1140px;margin:0 auto;padding:20px;width:100%;text-align:center">
         <h1 class="r-h1" style="margin:0;font-size:60px;line-height:65px;font-weight:800;text-transform:uppercase;color:#fff">{{ t.contactUs }}</h1>
@@ -735,14 +753,14 @@
           <h2 class="r-h2" style="margin:0;font-size:40px;font-weight:600;text-transform:capitalize;color:#000">{{ t.findUs }}</h2>
           <div class="r-rule" style="width:10%;border-top:5px solid #f80506;margin:14px auto 0"></div>
         </div>
-        <iframe src="https://maps.google.com/maps?q=29.911330418560066,30.906757280559916&amp;t=m&amp;z=12&amp;output=embed&amp;iwloc=near" title="ICDI — 6th of October City, 3rd Industrial Zone, Piece 227, Giza, Egypt" aria-label="Map showing ICDI in the 3rd Industrial Zone, 6th of October City, Egypt" loading="lazy" class="r-map" style="width:100%;height:420px;border:0;display:block"></iframe>
+        <iframe loading="lazy" src="https://maps.google.com/maps?q=29.911330418560066,30.906757280559916&amp;t=m&amp;z=12&amp;output=embed&amp;iwloc=near" title="ICDI — 6th of October City, 3rd Industrial Zone, Piece 227, Giza, Egypt" aria-label="Map showing ICDI in the 3rd Industrial Zone, 6th of October City, Egypt" loading="lazy" class="r-map" style="width:100%;height:420px;border:0;display:block"></iframe>
         <div style="display:flex;justify-content:center;margin-top:24px">
           <a href="https://www.google.com/maps/dir/?api=1&amp;destination=29.911330418560066,30.906757280559916" target="_blank" rel="noopener" class="icdi-btn r-btn" style="display:flex;align-items:center;gap:10px;padding:15px 30px;font-size:15px;font-weight:400;text-transform:uppercase"><i class="fas fa-directions"></i>{{ t.getDirections }}</a>
         </div>
       </div>
     </section>
 
-    <section style="position:relative;padding:50px 0;background-image:url('assets/contact-bg.jpeg');background-position:center center;background-size:cover">
+    <section style="position:relative;padding:50px 0;background-image:url('assets/contact-bg.webp');background-position:center center;background-size:cover">
       <div style="position:absolute;inset:0;background:#fff;opacity:0.95"></div>
       <div class="r-inner" style="position:relative;max-width:600px;margin:0 auto;padding:0 20px">
         <div style="text-align:center">
@@ -767,7 +785,7 @@
   <!-- footer -->
   <footer style="background:#fff">
     <div style="max-width:1140px;margin:0 auto;padding:50px 20px;display:grid;grid-template-columns:1.3fr 1fr 1fr;gap:40px;align-items:start" class="r-foot r-inner">
-      <div><img src="assets/logo-icdi.webp" alt="ICDI — International Company for Developed Industry logo" style="max-width:280px;width:100%;display:block"></div>
+      <div><img src="assets/logo-icdi.webp" loading="lazy" decoding="async" alt="ICDI — International Company for Developed Industry logo" style="max-width:280px;width:100%;display:block"></div>
       <div class="icdi-list r-footlist" style="display:flex;flex-direction:column;gap:15px;font-size:16px">
         <a href="#" onClick="{{ goHome }}" style="color:#000;display:flex;gap:10px;align-items:center"><i class="fas fa-angle-right" style="color:#e85b5b"></i>{{ t.navHome }}</a>
         <a href="#" onClick="{{ goAbout }}" style="color:#000;display:flex;gap:10px;align-items:center"><i class="fas fa-angle-right" style="color:#e85b5b"></i>{{ t.navAbout }}</a>
@@ -775,8 +793,8 @@
         <a href="#" onClick="{{ goContact }}" style="color:#000;display:flex;gap:10px;align-items:center"><i class="fas fa-angle-right" style="color:#e85b5b"></i>{{ t.navContact }}</a>
       </div>
       <div class="r-footlist" style="display:flex;flex-direction:column;gap:15px;font-size:16px;color:#000">
-        <span style="display:flex;gap:10px;align-items:center"><i class="fas fa-phone-alt" style="color:#e85b5b"></i>+20 38206092 - 38206093</span>
-        <span style="display:flex;gap:10px;align-items:center"><i class="fas fa-envelope" style="color:#e85b5b"></i>info@icdieg.com</span>
+        <span dir="ltr" style="display:flex;gap:10px;align-items:center;justify-content:flex-start"><i class="fas fa-phone-alt" style="color:#e85b5b"></i>+20 38206092 - 38206093</span>
+        <span dir="ltr" style="display:flex;gap:10px;align-items:center;justify-content:flex-start"><i class="fas fa-envelope" style="color:#e85b5b"></i>info@icdieg.com</span>
         <div style="display:flex;gap:10px;margin-top:6px">
           <a href="https://www.linkedin.com/company/international-company-for-developed-industry" target="_blank" rel="noopener" aria-label="ICDI on LinkedIn" class="icdi-soc-f" style="width:34px;height:34px;display:flex;align-items:center;justify-content:center;font-size:14px"><i class="fab fa-linkedin-in"></i></a>
         </div>
@@ -872,27 +890,51 @@ class Component extends DCLogic {
     this.stopCounter();
     this.setState({ page: p, sent: false });
     window.scrollTo(0, 0);
+    if (this._warm) setTimeout(this._warm, 250);
   }
 
   ringRef = (el) => {
     this._ringEl = el;
-    if (!el) return;
+    if (!el) { if (this._ringRaf) { cancelAnimationFrame(this._ringRaf); this._ringRaf = null; } return; }
     if (!this._onResize) {
-      this._onResize = () => this.forceUpdate();
+      this._onResize = () => { this._ringW = 0; this._paintRing(); };
       window.addEventListener("resize", this._onResize);
     }
+    this._ringVisible = true;
     if (this._ringRaf) return;
     let last = performance.now();
+    let n = 0;
     const tick = (now) => {
       const dt = Math.min(0.05, (now - last) / 1000); last = now;
-      if (!this._ringPaused) {
+      // re-check on-screen every ~12 frames: cheap, and idles the loop when scrolled away
+      if ((n++ % 12) === 0 && this._ringEl) {
+        const r = this._ringEl.getBoundingClientRect();
+        this._ringVisible = r.bottom > -140 && r.top < (window.innerHeight || 800) + 140;
+      }
+      if (!this._ringPaused && this._ringVisible) {
         this._ringAngle = ((this._ringAngle || 0) + dt * 0.21) % (Math.PI * 2);
-        this.forceUpdate();
+        this._paintRing();
       }
       this._ringRaf = requestAnimationFrame(tick);
     };
     this._ringRaf = requestAnimationFrame(tick);
   };
+
+  _paintRing() {
+    const el = this._ringEl;
+    if (!el) return;
+    const nodes = el.querySelectorAll(".r-ring-item");
+    if (!nodes.length) return;
+    const frame = this._ring();
+    for (let i = 0; i < nodes.length && i < frame.length; i++) {
+      const n = nodes[i], f = frame[i];
+      n.style.transform = f.tf;
+      n.style.opacity = f.op;
+      n.style.zIndex = f.z;
+      const labels = n.querySelectorAll(":scope > div:not(.r-ring-img)");
+      for (let k = 0; k < labels.length; k++) labels[k].style.opacity = f.labelOp;
+    }
+  }
 
   _ring() {
     const list = this._vehicles();
@@ -926,18 +968,18 @@ class Component extends DCLogic {
 
   _vehicles() {
     return [
-      { name: "Chevrolet N-Series", note: "truck", img: "assets/v/trim/chevy-n-series.png" },
-      { name: "Chevrolet T-Series", note: "pickup", img: "assets/v/trim/chevy-t-series.png" },
-      { name: "MCV Coach", note: "bus", img: "assets/v/trim/mcv-bus.png" },
-      { name: "Suzuki Pickup", note: "lcv", img: "assets/v/trim/suzuki-pickup.png" },
-      { name: "Suzuki Van", note: "lcv", img: "assets/v/trim/suzuki-van-v2.png" },
-      { name: "Foton View", note: "minibus", img: "assets/v/trim/foton-view-v2.png" },
-      { name: "Chery Tiggo 4 Pro", note: "suv", img: "assets/v/trim/tiggo-4pro.png" },
-      { name: "Chery Tiggo 8", note: "suv", img: "assets/v/trim/tiggo-8.png" },
-      { name: "Chery Arrizo 5", note: "sedan", img: "assets/v/trim/chery-arrizo-5.png" },
-      { name: "Geely Emgrand", note: "sedan", img: "assets/v/trim/geely-emgrand-v2.png" },
-      { name: "Hyundai Elantra", note: "sedan", img: "assets/v/trim/hyundai-elantra.png" },
-      { name: "Hyundai Accent", note: "sedan", img: "assets/v/trim/hyundai-accent.png" }
+      { name: "Chevrolet N-Series", note: "truck", img: "assets/v/trim/chevy-n-series.webp" },
+      { name: "Chevrolet T-Series", note: "pickup", img: "assets/v/trim/chevy-t-series.webp" },
+      { name: "MCV Coach", note: "bus", img: "assets/v/trim/mcv-bus.webp" },
+      { name: "Suzuki Pickup", note: "lcv", img: "assets/v/trim/suzuki-pickup.webp" },
+      { name: "Suzuki Van", note: "lcv", img: "assets/v/trim/suzuki-van-v2.webp" },
+      { name: "Foton View", note: "minibus", img: "assets/v/trim/foton-view-v2.webp" },
+      { name: "Chery Tiggo 4 Pro", note: "suv", img: "assets/v/trim/tiggo-4pro.webp" },
+      { name: "Chery Tiggo 8", note: "suv", img: "assets/v/trim/tiggo-8.webp" },
+      { name: "Chery Arrizo 5", note: "sedan", img: "assets/v/trim/chery-arrizo-5.webp" },
+      { name: "Geely Emgrand", note: "sedan", img: "assets/v/trim/geely-emgrand-v2.webp" },
+      { name: "Hyundai Elantra", note: "sedan", img: "assets/v/trim/hyundai-elantra.webp" },
+      { name: "Hyundai Accent", note: "sedan", img: "assets/v/trim/hyundai-accent.webp" }
     ];
   }
 
@@ -1008,6 +1050,23 @@ class Component extends DCLogic {
       setTimeout(() => { el.src = s + (s.indexOf("?") < 0 ? "?r=" : "&r=") + n; }, 150 * (n + 1));
     };
     document.addEventListener("error", this._onImgError, true);
+    const warm = () => {
+      // promote the page's own lazy images rather than re-fetching them by URL —
+      // same guarantee that everything loads, without a duplicate request
+      document.querySelectorAll('img[loading="lazy"]').forEach((im) => {
+        if (!im.complete) { im.fetchPriority = "low"; im.loading = "eager"; }
+      });
+      this._warmed = this._warmed || [];
+      const onDom = new Set();
+      document.querySelectorAll("img[src]").forEach((im) => onDom.add(im.getAttribute("src")));
+      [].concat(this._vehicles().map((v) => v.img), this._clients().map((c) => c.img)).forEach((u) => {
+        if (!u || onDom.has(u) || this._warmed.indexOf(u) > -1) return;
+        this._warmed.push(u);
+        const i = new Image(); i.decoding = "async"; i.fetchPriority = "low"; i.src = u;
+      });
+    };
+    this._warm = warm;
+    if (window.requestIdleCallback) requestIdleCallback(warm, { timeout: 2500 }); else setTimeout(warm, 1400);
   }
 
   componentDidUpdate() { if (this._alignRaf) this._alignRaf(); }
@@ -1187,7 +1246,7 @@ class Component extends DCLogic {
 
   _slides() {
     return [
-      { src: "assets/founder-v2.png", x: this.props.founderX ?? 38, y: this.props.founderY ?? 100, zoom: this.props.founderZoom ?? 105, ratio: this.props.founderRatio ?? "4 / 3" }
+      { src: "assets/founder-v2.webp", x: this.props.founderX ?? 38, y: this.props.founderY ?? 100, zoom: this.props.founderZoom ?? 105, ratio: this.props.founderRatio ?? "4 / 3" }
     ];
   }
 
@@ -1309,16 +1368,16 @@ class Component extends DCLogic {
         document.body.appendChild(a); a.click(); a.remove();
       },
       services: [
-        { icon: "fas fa-tape", iconSvg: "", img: "assets/svc-metal-forming-new.png" },
+        { icon: "fas fa-tape", iconSvg: "", img: "assets/svc-metal-forming-new.webp" },
         { icon: "fas fa-fire-alt", iconSvg: "assets/icons/welding-torch-v2.svg", img: "assets/svc-metal-forming.webp" },
         { icon: "fas fa-spray-can", iconSvg: "", img: "assets/svc-welding.webp" },
-        { icon: "fas fa-syringe", iconSvg: "assets/icons/injection-mould-v2.svg", img: "assets/svc-plastic-moulding.png" },
-        { icon: "fas fa-stamp", iconSvg: "assets/icons/rubber-roll.svg", img: "assets/svc-rubber.png" },
+        { icon: "fas fa-syringe", iconSvg: "assets/icons/injection-mould-v2.svg", img: "assets/svc-plastic-moulding.webp" },
+        { icon: "fas fa-stamp", iconSvg: "assets/icons/rubber-roll.svg", img: "assets/svc-rubber.webp" },
         { icon: "fas fa-bolt", iconSvg: "assets/icons/laser-cut.svg", img: "assets/svc-painting.webp" }
       ].map((m, i) => {
         const L = this._svc()[this.state.lang || "en"][i];
         return { icon: m.icon, iconSvg: m.iconSvg, img: m.img, name: L[0], body: L[1], long: L[2],
-          textOrder: i % 2 ? 2 : 1, imgOrder: i % 2 ? 1 : 2, rowClass: i % 2 ? "r-2col r-imgfirst" : "r-2col r-imglast", iconFont: !m.iconSvg };
+          textOrder: i % 2 ? 2 : 1, imgOrder: i % 2 ? 1 : 2, rowClass: i % 2 ? "r-2col r-imgfirst r-stack" : "r-2col r-imglast r-stack", iconFont: !m.iconSvg };
       }),
       certs: [
         { name: "IATF 16949:2016", img: "assets/cert-iso45001-1.webp" },

@@ -522,13 +522,17 @@
           <div class="r-rule" style="width:10%;border-top:5px solid #f80506;margin:14px auto 30px"></div>
         </div>
         <form class="r-form" onSubmit="{{ onSubmit }}" style="display:grid;grid-template-columns:1fr 1fr;gap:10px">
-          <input class="icdi-field" type="text" placeholder="{{ t.fName }}" style="border:2px solid #DDDDDD;background:transparent;padding:12px 14px;font-family:inherit;font-size:16px;color:#000">
-          <input class="icdi-field" type="email" placeholder="{{ t.fEmail }}" style="border:2px solid #DDDDDD;background:transparent;padding:12px 14px;font-family:inherit;font-size:16px;color:#000">
-          <input class="icdi-field" type="tel" placeholder="{{ t.fPhone }}" style="grid-column:1 / -1;border:2px solid #DDDDDD;background:transparent;padding:12px 14px;font-family:inherit;font-size:16px;color:#000">
-          <textarea class="icdi-field" rows="5" placeholder="{{ t.fMessage }}" style="grid-column:1 / -1;border:2px solid #DDDDDD;background:transparent;padding:12px 14px;font-family:inherit;font-size:16px;color:#000;resize:vertical"></textarea>
-          <button type="submit" class="icdi-btn" style="grid-column:1 / -1;border:0;padding:14px 30px;font-family:inherit;font-size:15px;font-weight:500;text-transform:uppercase;cursor:pointer">{{ t.send }}</button>
+          <input class="icdi-field" name="name" required type="text" placeholder="{{ t.fName }}" style="border:2px solid #DDDDDD;background:transparent;padding:12px 14px;font-family:inherit;font-size:16px;color:#000">
+          <input class="icdi-field" name="email" required type="email" placeholder="{{ t.fEmail }}" style="border:2px solid #DDDDDD;background:transparent;padding:12px 14px;font-family:inherit;font-size:16px;color:#000">
+          <input class="icdi-field" name="phone" type="tel" placeholder="{{ t.fPhone }}" style="grid-column:1 / -1;border:2px solid #DDDDDD;background:transparent;padding:12px 14px;font-family:inherit;font-size:16px;color:#000">
+          <textarea class="icdi-field" name="message" required rows="5" placeholder="{{ t.fMessage }}" style="grid-column:1 / -1;border:2px solid #DDDDDD;background:transparent;padding:12px 14px;font-family:inherit;font-size:16px;color:#000;resize:vertical"></textarea>
+          <input type="text" name="_honey" tabindex="-1" autocomplete="off" style="display:none">
+          <button type="submit" disabled="{{ sending }}" class="icdi-btn" style="grid-column:1 / -1;border:0;padding:14px 30px;font-family:inherit;font-size:15px;font-weight:500;text-transform:uppercase;cursor:pointer">{{ t.send }}</button>
           <sc-if value="{{ sent }}" hint-placeholder-val="{{ false }}">
             <div style="grid-column:1 / -1;font-size:15px;color:#0707f6">{{ t.thanks }}</div>
+          </sc-if>
+          <sc-if value="{{ sendError }}" hint-placeholder-val="{{ false }}">
+            <div style="grid-column:1 / -1;font-size:15px;color:#f80506">{{ t.sendFail }}</div>
           </sc-if>
         </form>
       </div>
@@ -771,13 +775,17 @@
           <div class="r-rule" style="width:10%;border-top:5px solid #f80506;margin:14px auto 30px"></div>
         </div>
         <form class="r-form" onSubmit="{{ onSubmit }}" style="display:grid;grid-template-columns:1fr 1fr;gap:10px">
-          <input class="icdi-field" type="text" placeholder="{{ t.fName }}" style="border:2px solid #DDDDDD;background:transparent;padding:12px 14px;font-family:inherit;font-size:16px;color:#000">
-          <input class="icdi-field" type="email" placeholder="{{ t.fEmail }}" style="border:2px solid #DDDDDD;background:transparent;padding:12px 14px;font-family:inherit;font-size:16px;color:#000">
-          <input class="icdi-field" type="tel" placeholder="{{ t.fPhone }}" style="grid-column:1 / -1;border:2px solid #DDDDDD;background:transparent;padding:12px 14px;font-family:inherit;font-size:16px;color:#000">
-          <textarea class="icdi-field" rows="5" placeholder="{{ t.fMessage }}" style="grid-column:1 / -1;border:2px solid #DDDDDD;background:transparent;padding:12px 14px;font-family:inherit;font-size:16px;color:#000;resize:vertical"></textarea>
-          <button type="submit" class="icdi-btn" style="grid-column:1 / -1;border:0;padding:14px 30px;font-family:inherit;font-size:15px;font-weight:500;text-transform:uppercase;cursor:pointer">{{ t.send }}</button>
+          <input class="icdi-field" name="name" required type="text" placeholder="{{ t.fName }}" style="border:2px solid #DDDDDD;background:transparent;padding:12px 14px;font-family:inherit;font-size:16px;color:#000">
+          <input class="icdi-field" name="email" required type="email" placeholder="{{ t.fEmail }}" style="border:2px solid #DDDDDD;background:transparent;padding:12px 14px;font-family:inherit;font-size:16px;color:#000">
+          <input class="icdi-field" name="phone" type="tel" placeholder="{{ t.fPhone }}" style="grid-column:1 / -1;border:2px solid #DDDDDD;background:transparent;padding:12px 14px;font-family:inherit;font-size:16px;color:#000">
+          <textarea class="icdi-field" name="message" required rows="5" placeholder="{{ t.fMessage }}" style="grid-column:1 / -1;border:2px solid #DDDDDD;background:transparent;padding:12px 14px;font-family:inherit;font-size:16px;color:#000;resize:vertical"></textarea>
+          <input type="text" name="_honey" tabindex="-1" autocomplete="off" style="display:none">
+          <button type="submit" disabled="{{ sending }}" class="icdi-btn" style="grid-column:1 / -1;border:0;padding:14px 30px;font-family:inherit;font-size:15px;font-weight:500;text-transform:uppercase;cursor:pointer">{{ t.send }}</button>
           <sc-if value="{{ sent }}" hint-placeholder-val="{{ false }}">
             <div style="grid-column:1 / -1;font-size:15px;color:#0707f6">{{ t.thanks }}</div>
+          </sc-if>
+          <sc-if value="{{ sendError }}" hint-placeholder-val="{{ false }}">
+            <div style="grid-column:1 / -1;font-size:15px;color:#f80506">{{ t.sendFail }}</div>
           </sc-if>
         </form>
       </div>
@@ -834,7 +842,7 @@
   &quot;crop6Zoom&quot;:{&quot;editor&quot;:&quot;range&quot;,&quot;default&quot;:100,&quot;min&quot;:100,&quot;max&quot;:200,&quot;step&quot;:5,&quot;unit&quot;:&quot;%&quot;,&quot;tsType&quot;:&quot;number&quot;,&quot;section&quot;:&quot;Crop — Mohamed El Sayed&quot;}
 }">
 class Component extends DCLogic {
-  state = { page: "home", sent: false, counter: 0 };
+  state = { page: "home", sent: false, sending: false, sendError: false, counter: 0 };
 
   observeCounter = (el) => {
     if (this._io) { this._io.disconnect(); this._io = null; }
@@ -891,7 +899,7 @@ class Component extends DCLogic {
   go(e, p) {
     if (e) e.preventDefault();
     this.stopCounter();
-    this.setState({ page: p, sent: false });
+    this.setState({ page: p, sent: false, sendError: false });
     window.scrollTo(0, 0);
     if (this._warm) setTimeout(this._warm, 250);
   }
@@ -1161,7 +1169,7 @@ class Component extends DCLogic {
         pdfOpens: "PDF catalogue — opens in a new tab", getInTouch: "Get In Touch", findUs: "Find Us",
         getDirections: "Get Directions", fillForm: "Fill Up The Form",
         fName: "Name", fEmail: "Email", fPhone: "Phone", fMessage: "Message", send: "Send",
-        thanks: "Thank you — your message has been sent.",
+        thanks: "Thank you — your message has been sent.", sendFail: "Sorry, the message could not be sent. Please email info@icdieg.com directly.",
         copyright: "Copyright © 2026 ICDI | Powered by ICDI",
         missionPara: "To manufacture metal, plastic and rubber components that meet automotive quality standards at competitive cost, delivered to line sequence, and to remain the supplier our customers can build a programme around. Every process stays under one roof so accountability for tooling, quality and delivery is never divided. We remain open to new investments, partnerships and joint ventures wherever they make industrial sense.",
         theFounderPara: "Abdelmeguid Hegazy started Alex Co. in 1979 and co-founded ICDI in 1997, and remains its major shareholder and chairman. He secured the company's OEM partnerships and led successive investment in tooling, process technology and plant infrastructure. That is the reason ICDI grew from a regional component shop into a certified tier supplier.",
@@ -1193,7 +1201,7 @@ class Component extends DCLogic {
         sampleProducts: "نماذج من منتجاتنا", catalogueSub: "كتالوج كامل للقطع التي ننتجها.",
         pdfOpens: "كتالوج PDF — يُفتح في تبويب جديد", getInTouch: "تواصل معنا", findUs: "موقعنا على الخريطة",
         getDirections: "الاتجاهات إلى المصنع", fillForm: "برجاء ملء النموذج",
-        fName: "الاسم", fEmail: "البريد الإلكتروني", fPhone: "الهاتف", fMessage: "الرسالة", send: "إرسال",
+        fName: "الاسم", fEmail: "البريد الإلكتروني", fPhone: "الهاتف", fMessage: "الرسالة", send: "إرسال", sendFail: "عذراً، تعذر إرسال الرسالة. يرجى مراسلتنا مباشرة على info@icdieg.com",
         thanks: "شكراً لك — تم إرسال رسالتك.",
         copyright: "جميع الحقوق محفوظة © 2026 ICDI",
         missionPara: "أن نصنع مكونات معدنية وبلاستيكية ومطاطية تستوفي معايير جودة صناعة السيارات بتكلفة تنافسية، وتُسلَّم وفق تسلسل خط الإنتاج، وأن نظل المورّد الذي يستطيع عملاؤنا أن يبنوا عليه برامجهم. تبقى كل العمليات تحت سقف واحد حتى لا تنقسم المسؤولية عن القوالب والجودة والتسليم. ونظل منفتحين على الاستثمارات والشراكات والمشروعات المشتركة حيثما كان لها منطق صناعي.",
@@ -1225,7 +1233,7 @@ class Component extends DCLogic {
         sampleProducts: "产品样本", catalogueSub: "我们生产的零部件完整目录。",
         pdfOpens: "PDF 目录 — 在新标签页中打开", getInTouch: "联系方式", findUs: "工厂位置",
         getDirections: "查看路线", fillForm: "请填写下方表单",
-        fName: "姓名", fEmail: "电子邮箱", fPhone: "电话", fMessage: "留言", send: "发送",
+        fName: "姓名", fEmail: "电子邮箱", fPhone: "电话", fMessage: "留言", send: "发送", sendFail: "抱歉，消息发送失败。请直接发送邮件至 info@icdieg.com。",
         thanks: "谢谢 — 您的留言已发送。",
         copyright: "版权所有 © 2026 ICDI",
         missionPara: "以具竞争力的成本，制造符合汽车行业质量标准的金属、塑料与橡胶零部件，并按客户线序交付，做客户敢于据以规划整车项目的那一家供应商。所有工序集中在同一厂区，模具、质量与交付的责任因此从不分割。对于具备产业逻辑的投资、合作与合资机会，我们始终持开放态度。",
@@ -1352,7 +1360,22 @@ class Component extends DCLogic {
       reelTens: this.reelTens,
       reelUnits: this.reelUnits,
       sent: this.state.sent,
-      onSubmit: (e) => { e.preventDefault(); this.setState({ sent: true }); },
+      sending: this.state.sending,
+      sendError: this.state.sendError,
+      onSubmit: (e) => {
+        e.preventDefault();
+        const form = e.currentTarget, fd = new FormData(form);
+        if (fd.get("_honey")) return;
+        const data = { name: fd.get("name"), email: fd.get("email"), phone: fd.get("phone") || "-", message: fd.get("message"),
+          _subject: "New website message — " + (fd.get("name") || ""), _replyto: fd.get("email"), _template: "table", _captcha: "false" };
+        this.setState({ sending: true, sent: false, sendError: false });
+        fetch("https://formsubmit.co/ajax/info@icdieg.com", { method: "POST", headers: { "Content-Type": "application/json", Accept: "application/json" }, body: JSON.stringify(data) })
+          .then(r => r.json()).then(j => {
+            const ok = j && (j.success === true || j.success === "true");
+            this.setState({ sending: false, sent: ok, sendError: !ok });
+            if (ok) form.reset();
+          }).catch(() => this.setState({ sending: false, sendError: true }));
+      },
       openProfile: (e) => {
         e.preventDefault();
         window.open(new URL("assets/ICDI-Company-Profile.html", document.baseURI).href, "_blank", "noopener");
